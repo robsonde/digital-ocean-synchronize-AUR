@@ -55,7 +55,7 @@ do_curl() {
 	for retry in {1..20}; do
 		if result=$(curl -sf -m 1 ${1}); then
 			log "Got a result of ${result} from a query of ${1}"
-			echo ${result}
+			printf '%s' "${result}"
 			break
 		else
 			log "Unable get result for ${1}"
